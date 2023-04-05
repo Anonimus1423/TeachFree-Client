@@ -40,7 +40,6 @@ const RegistrPage = () => {
       await axios.post("/user/step1", inputs);
       setStep(1);
     } catch ({ response }) {
-      console.log(response.data.errors);
       PrintErrors(response.data.errors);
       setStep(0);
     }
@@ -111,6 +110,8 @@ const RegistrPage = () => {
                   label="Born Date"
                   value={inputs.date}
                   onChange={handleInputChange}
+                  min="1900-01-01" 
+                  max="2020-12-31"
                   name="date"
                   placeHolder="Գրեք ձեր ծննդաթիվը"
                 />

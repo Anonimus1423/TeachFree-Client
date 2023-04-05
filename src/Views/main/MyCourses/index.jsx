@@ -48,7 +48,6 @@ function MyCourses() {
                   return a?.course?.progress !== 100 ? 1 : -1;
                 })
                 .map((course, i) => {
-                  console.log(course);
                   return (
                     <CourseBlock
                       title={course?.course?.title}

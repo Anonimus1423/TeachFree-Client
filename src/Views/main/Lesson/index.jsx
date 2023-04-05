@@ -75,7 +75,6 @@ function Lesson() {
     });
     getLesson({}, (data) => {
       setLesson(data);
-      console.log(data?.test?.length === 0, data.lesson.passed);
       if (data?.test?.length === 0 || data.lesson.passed) {
         setIsTestPassed(true);
       }

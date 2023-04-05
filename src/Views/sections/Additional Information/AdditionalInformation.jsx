@@ -7,9 +7,9 @@ import {ReactComponent as PenIcon} from "../../images/icons/Pen.svg";
 function AdditionalInformation() {
     return ( 
         <section className="additionalInformation right-container">
-            <InfoBlock text="աշակերտ" number="1856" Icon={StudyIcon} />
-            <InfoBlock text="վիդեոդասեր" number="354" Icon={VideoIcon} />
-            <InfoBlock text="դրական կարծիք" number="50" Icon={PenIcon} />
+            <InfoBlock text="աշակերտ" number="120" Icon={StudyIcon} />
+            <InfoBlock text="վիդեոդասեր" number="60" Icon={VideoIcon} />
+            <InfoBlock text="դրական կարծիք" number="27" Icon={PenIcon} />
         </section>    
     );
 }

@@ -29,7 +29,6 @@ function App() {
     });
     if (token) {
       init({}, (data) => {
-        console.log(data);
         dispatch(initApp(data));
       });
       return;
@@ -37,7 +36,6 @@ function App() {
   }, []);
 
   const [sidebarOpened, setSidebarOpened] = useState(false);
-  console.log(123123);
   useEffect(() => {
     sidebarOpened
       ? (document.documentElement.style = "overflow: hidden;")
