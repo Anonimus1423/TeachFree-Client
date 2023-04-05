@@ -1,0 +1,278 @@
+.course
+{
+    background-color: #FFFEF2;
+    padding: 64px 48px;
+    margin-top: 32px;
+    position: relative;
+    transition: 0.2s;
+    display: block;
+    cursor: pointer;
+    border-radius: 16px;
+    &:first-child
+    {
+        margin-top: 42px;
+    }
+    .course__body
+    {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .left
+        {
+            img
+            {
+                min-width: 500px;
+                min-height: 400px;
+                max-width: 500px;
+                max-height: 400px;
+            }
+        }
+        .right
+        {
+            padding-left: 48px;
+            .top
+            {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                ul.tags
+                {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    li.tag
+                    {
+                        height: 30px;
+                        padding: 0 24.5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 60px;
+                        margin-right: 16px;
+                        &.purple
+                        {
+                            background-color: #F2E9FF;
+                        }
+                        &.yellow
+                        {
+                            background-color: #FFF8BF;
+                        }
+                        &:last-child
+                        {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .share
+                {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    svg
+                    {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    p
+                    {
+                        margin-left: 16px;
+                    }
+                }
+            }
+            &>h3
+            {
+                margin: 24px 0;
+            }
+            &>p
+            {
+    
+            }
+        }
+        .proggress
+        {
+            width: 100%;
+            height: 6px;
+            border-radius: 12px;
+            position: absolute;
+            top: 100%;
+            background-color: #F8F3D1;
+            left: 50%;
+            transform: translate(-50%, -100%) translateY(32px);
+            .proggress__pointer
+            {
+                height: 6px;
+                border-radius: 12px;
+                position: absolute;
+                background-color: #EFC31A;
+            }
+        }
+    }
+    .close-block
+    {
+        pointer-events: none;
+        opacity: 0;
+        background: #FFFBD980;
+        position: absolute;
+        border-radius: 16px;
+        left: 50%;
+        z-index: 2;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg
+        {
+            width: 80px;
+            height: 105px;
+        }
+    }
+    &:hover
+    {
+        background: #FFFBD9;
+        box-shadow: 0px 1.399999976158142px 13px 0px #00000009;
+        box-shadow: 0px 7px 80px 0px #00000012;
+    }
+    &.closed
+    {
+        .close-block
+        {
+            pointer-events: auto;
+            opacity: 1;
+        }
+    }
+    &.active
+    {
+        background-color: #E9FFE5;
+        .proggress, .proggress .proggress__pointer
+        {
+            background-color: #10AF63;
+        }
+        .tags .tag:last-child
+        {
+            background-color: #CAF2C4;
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .course
+    {
+        padding: 45px 45px;
+        border-radius: 14px;
+        padding-top: 35px;
+        .course__body
+        {
+            .right
+            {
+                padding-left: 34px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1480px) {
+    .course
+    {
+        padding: 64px 48px;
+        padding-top: 38px;
+        border-radius: 16px;
+        .course__body
+        {
+            flex-direction: column;
+            .right
+            {
+                padding-left: 0px;
+                margin-top: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .course
+    {
+        padding: 32px 24px;
+        padding-top: 19px;
+        margin-top: 16px;
+        &:first-child
+        {
+            margin-top: 23px;
+        }
+        .course__body
+        {
+            .left
+            {
+                img
+                {
+                    min-width: 375px;
+                    min-height: 300px;
+                    max-width: 375px;
+                    max-height: 300px;
+                }
+            }
+            .right
+            {
+                .top
+                {
+                    ul.tags
+                    {
+                        margin-top: 5px;
+                        li.tag
+                        {
+                            height: 30px;
+                            padding: 0 16px;
+                            margin-right: 10px;
+                        }
+                    }
+                    .share
+                    {
+                        margin-top: 5px;
+                        svg
+                        {
+                            width: 24px;
+                            height: 24px;
+                        }
+                        p
+                        {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                &>h3
+                {
+                    margin: 16px 0;
+                }
+            }
+            .proggress
+            {
+                height: 4px;
+                transform: translate(-50%, -100%) translateY(16px);
+                .proggress__pointer
+                {
+                    height: 4px;
+                }
+            }
+        }
+        .close-block
+        {
+            svg
+            {
+                width: 48px;
+                height: 63px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .course .course__body .left img
+    {
+        min-width: 277px;
+        min-height: 222px;
+        max-width: 277px;
+        max-height: 222px;
+    }
+}

@@ -1,0 +1,228 @@
+.mainButton
+{
+    padding: 18.5px 60px;
+    background: linear-gradient(140.52deg, #7D16FF 0%, #A766FE 100%);
+    border-radius: 37px;
+    transition: 0.2s;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    &>svg
+    {
+        transform: rotate(180deg);
+        margin-left: 17px;
+        &.left
+        {
+            transform: rotate(0deg);
+            margin-right: 17px;
+        }
+    }
+    &>.background
+    {
+        width: 100.5%;
+        height: 103%;
+        position: absolute;
+        border-radius: 37px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+        opacity: 0;
+        transition: 0.2s;
+        background: linear-gradient(123.72deg, #FF8A00 0%, #FFD226 97.41%);
+    }
+    p
+    {
+        position: relative;
+        z-index: 2;
+        color: white;
+        transition: 0.2s;
+    }
+    &.m
+    {
+        padding: 14.5px 45px;
+    }
+    &.s
+    {
+        padding: 10.5px 35px;
+    }
+    &.full
+    {
+        width: 100%;
+        p
+        {
+            text-align: center;
+            width: 100%;
+        }
+    }
+    &.purple
+    {
+        background: linear-gradient(140.52deg, #7D16FF 0%, #A766FE 100%);
+        p
+        {
+            color: white;
+        }
+        &:hover
+        {
+            .background
+            {
+                opacity: 1;
+            }
+        }
+    }
+    &.yellow
+    {
+        background: linear-gradient(123.72deg, #FF8A00 0%, #FFD226 97.41%);
+        p
+        {
+            color: white;
+        }
+        &>.background
+        {
+            background: #EFBE00;
+            width: 100%;
+            height: 100%;
+        }
+        &:hover
+        {
+            .background
+            {
+                opacity: 1;
+            }
+        }
+        &>svg *
+        {
+            stroke: white;
+        }
+    }
+    &.yellow-none-gradient
+    {
+        background: #EFBE00;
+        p
+        {
+            color: white;
+        }
+        &>.background
+        {
+            background: linear-gradient(123.72deg, #FF8A00 0%, #FFD226 97.41%);
+            width: 100%;
+            height: 100%;
+        }
+        &:hover
+        {
+            .background
+            {
+                opacity: 1;
+            }
+        }
+        &>svg *
+        {
+            stroke: white;
+        }
+    }
+    &.transparent
+    {
+        padding: 0;
+        background: transparent;
+        p
+        {
+            color: black;
+        }
+        &:hover > p
+        {
+            color: #FF8A00;
+        }
+    }
+    &.transparent-yellow
+    {
+        padding: 0;
+        background: transparent;
+        p
+        {
+            color: #EFBE00;
+        }
+        &:hover > p
+        {
+            color: #FF8A00;
+        }
+    }
+    &.transparent-yellow-bordered
+    {
+        background: transparent;
+        border: 1px solid #ffb215;
+        transition: 0.2s;
+        p
+        {
+            color: #ffb215;
+            transition: 0.2s;
+        }
+        &:hover
+        {
+            background-color: #ffb215;
+            p
+            {
+                color: white;
+            }
+        }
+    }
+    &.disabled
+    {
+        opacity: 0.4;
+    }
+    &.C1
+    {
+        background-color: #A766FE;
+        &>.background
+        {
+            background: #9056dd;
+        }
+    }
+    &.A1
+    {
+        background-color: #10AF63;
+        &>.background
+        {
+            background: #119957;
+        }
+    }
+    &.A2
+    {
+        background-color: #FF3596;
+        &>.background
+        {
+            background: #d72b7e;
+        }
+    }
+    &.B1
+    {
+        background-color: #0487FF;
+        &>.background
+        {
+            background: #046ed1;
+        }
+    }
+    &.C2
+    {
+        background-color: #FFA837;
+        &>.background
+        {
+            background: #db902f;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) 
+{
+    .mainButton
+    {
+        padding: 10.5px 30px;
+        &.m
+        {
+            padding: 8px 25px;
+        }
+        &.s
+        {
+            padding: 8px 16px;
+        }
+    }
+}

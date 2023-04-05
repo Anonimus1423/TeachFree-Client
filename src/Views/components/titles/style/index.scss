@@ -1,0 +1,306 @@
+h2.main-title
+{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-left: 29px;
+    position: relative;
+    &::before
+    {
+        content: "";
+        height: 100%;
+        width: 5px;
+        border-radius: 0 10px 10px 0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);   
+        background: linear-gradient(123.72deg, #FF8A00 0%, #FFD226 97.41%);
+    }
+}
+
+.page-title
+{
+    .page-title__top
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2
+        {
+            line-height: 37px;
+        }
+        ul.tags
+        {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            li.tag
+            {
+                padding: 4px 0;
+                min-width: 89px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 60px;
+                margin-right: 16px;
+                &.white
+                {
+                    background-color: #FFFEF2;
+                }
+                &.yellow
+                {
+                    background-color: #FFFBD9;
+                }
+                &:last-child
+                {
+                    margin-right: 0;
+                }
+            }
+        }
+        .time
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img
+            {
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+            }
+        }
+    }
+    .proggress
+    {
+        margin-top: 24px;
+        width: 100%;
+        height: 6px;
+        position: relative;
+        border-radius: 12px;
+        background-color: #F8F3D1;
+        .proggress__pointer
+        {
+            height: 6px;
+            border-radius: 12px;
+            position: absolute;
+            background-color: #EFC31A;
+        }
+    }
+    .proggress.C1
+    {
+        background-color: #E2D0FD;
+        .proggress__pointer
+        {
+            background-color: #A766FE;
+        }
+    }
+    .page-title__top .tags.C1
+    {
+        li.tag
+        {
+            &.white
+            {
+                background-color: #F2E9FF;
+            }
+            &.yellow
+            {
+                background-color: #E2D0FD;
+            }
+        }
+    }
+    .proggress.A1
+    {
+        background-color: #CEFAC6;
+        .proggress__pointer
+        {
+            background-color: #10AF63;
+        }
+    }
+    .page-title__top .tags.A1
+    {
+        li.tag
+        {
+            &.white
+            {
+                background-color: #E9FFE5;
+            }
+            &.yellow
+            {
+                background-color: #CEFAC6;
+            }
+        }
+    }
+    .proggress.A2
+    {
+        background-color: #FEB2D5;
+        .proggress__pointer
+        {
+            background-color: #FF3596;
+        }
+    }
+    .page-title__top .tags.A2
+    {
+        li.tag
+        {
+            &.white
+            {
+                background-color: #FFEBF4;
+            }
+            &.yellow
+            {
+                background-color: #FEB2D5;
+            }
+        }
+    }
+    .proggress.B1
+    {
+        background-color: #8EC0EF;
+        .proggress__pointer
+        {
+            background-color: #0487FF;
+        }
+    }
+    .page-title__top .tags.B1
+    {
+        li.tag
+        {
+            &.white
+            {
+                background-color: #E8F4FF;
+            }
+            &.yellow
+            {
+                background-color: #8EC0EF;
+            }
+        }
+    }
+    .proggress.C2
+    {
+        background-color: #F2C487;
+        .proggress__pointer
+        {
+            background-color: #FFA837;
+        }
+    }
+    .page-title__top .tags.C2
+    {
+        li.tag
+        {
+            &.white
+            {
+                background-color: #FFF3E3;
+            }
+            &.yellow
+            {
+                background-color: #F2C487;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    h2.main-title
+    {
+        margin-top: 72px;
+        margin-bottom: 36px;
+        padding-left: 26px;
+        line-height: 40px;
+        font-size: 27px;
+    }
+    .page-title
+    {
+        .page-title__top
+        {
+            h2
+            {
+                line-height: 35px;
+                font-size: 28px;
+            }
+            ul.tags
+            {
+                li.tag
+                {
+                    padding: 3px 0;
+                    min-width: 80px;
+                    margin-right: 14px;
+                    p
+                    {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .proggress
+        {
+            margin-top: 21px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) 
+{
+    .page-title
+    {
+        .page-title__top
+        {
+            flex-direction: column;
+            align-items: start;
+            ul.tags
+            {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+        .proggress
+        {
+            margin-top: 24px;
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    h2.main-title
+    {
+        margin-top: 68px;
+        margin-bottom: 34px;
+        padding-left: 25px;
+        line-height: 34px;
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    h2.main-title
+    {
+        margin-top: 40px;
+        margin-bottom: 24px;
+        padding-left: 17px;
+        &::before
+        {
+            transform: translateY(-50%) translateY(3px);
+        }
+    }
+    .page-title
+    {
+        .page-title__top
+        {
+            ul.tags
+            {
+                margin-top: 16px !important;
+                li.tag
+                {
+                    padding: 3px 0;
+                    min-width: 73px;
+                }
+            }
+        }
+        .proggress
+        {
+            margin-top: 24px;
+            height: 4px;
+            .proggress__pointer
+            {
+                height: 4px;
+            }
+        }
+    }
+}
