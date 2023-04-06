@@ -4,7 +4,7 @@ function Footer({ fixed }) {
   return (
     <footer className={fixed ? "fixed" : ""}>
       <div className="right-container">
-        <p className="left m">©2023г. Все права зищищены.</p>
+        <p className="left m">©2023 All rights reserved.</p>
         <Link to="/#" className="right">
           <p className="m">Powered By Web-Team</p>
         </Link>

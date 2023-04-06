@@ -14,9 +14,9 @@ function AllCoursesAuthorizedComponent({ courses }) {
       return !course.course.tags.includes("hidden");
     })
     .sort((a, b) => {
-      return a?.progress === 100 ? 1 : -1;
+      return a?.progress > b?.progress ? 1 : -1;
     })
-    .sort((a, b) => (!openedLevel.includes(a.course.level) ? 1 : -1))
+    .sort((a, b) => (openedLevel.includes(b.course.level) ? 1 : -1))
     .map((course, i) => {
       const isClosed = !openedLevel.includes(course.course.level);
       return (

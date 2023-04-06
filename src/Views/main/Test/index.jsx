@@ -108,12 +108,12 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
             }}
           />
           <h2 className="secondPage">
-            {lesson?.title || "English Level Test"}
+            {lesson?.title || "Անգլերենի մակարդակի ստուգում"}
           </h2>
           <div className="test-container test-container-2">
             <div className="test">
               <div className="test-top">
-                <p className="m">Выбери правильный вариант</p>
+                <p className="m">Ստուգեք ձեր գիտելիքները</p>
                 <p className="subtitle h2">
                   {step + 1} \ {currentTest?.length}
                 </p>
@@ -183,7 +183,7 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
                     disabled={!isAnswered}
                     onClick={() => nextStep()}
                   >
-                    Հետագա
+                    Հաջորդը
                   </MainButton>
                 </div>
               </div>
@@ -198,7 +198,7 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
           title={lesson?.title}
           description={
             <>
-              Շնորհավորում ենք դուք անցել եք թեստը <br /> կիսվեք Ձեր
+              Շնորհավորում ենք, դուք անցաք թեստը <br /> կիսվեք Ձեր
               հաջողությամբ սոցիալական կայքերում
             </>
           }

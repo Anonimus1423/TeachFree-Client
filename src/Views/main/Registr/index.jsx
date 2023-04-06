@@ -67,7 +67,7 @@ const RegistrPage = () => {
       />
       {step === 0 && (
         <div className="right-container">
-          <h2 className="secondPage">Already have an account?</h2>
+          <h2 className="secondPage">Չունեք ակկաունտ</h2>
           <form
             onSubmit={(e) => {
               e.preventDefault();

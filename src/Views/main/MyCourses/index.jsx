@@ -45,7 +45,7 @@ function MyCourses() {
               </MainTitle>
               {courses
                 .sort((a, b) => {
-                  return a?.progress !== 100 ? 1 : -1;
+                  return a?.progress > b?.progress ? 1 : -1;
                 })
                 .map((course, i) => {
                   return (

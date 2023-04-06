@@ -182,7 +182,7 @@ function Lesson() {
                     disabled={!isTestPassed}
                     className={!isTestPassed ? "disabled" : ""}
                   >
-                    {!isLastTest ? "Հետագա" : "Ավարտել"}
+                    {!isLastTest ? "Հաջորդը" : "Ավարտել"}
                   </MainButton>
                 </Link>
               ) : (
@@ -192,7 +192,7 @@ function Lesson() {
                   disabled={!isTestPassed}
                   className={!isTestPassed ? "disabled" : ""}
                 >
-                  {!isLastTest ? "Հետագա" : "Ավարտել"}
+                  {!isLastTest ? "Հաջորդը" : "Ավարտել"}
                 </MainButton>
               )}
             </div>
