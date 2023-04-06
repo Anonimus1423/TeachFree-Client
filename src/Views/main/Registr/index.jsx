@@ -7,12 +7,32 @@ import RegistrationIcon from "../../images/form images/Registration.svg";
 import "./style/index.scss";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { authUser } from "../../../Api/queries.js";
+import { initApp } from "../../../redux/app/reducer.js";
+import useSumbitForm from "../../../utils/submitForm.js";
 axios.defaults.baseURL = process.env.REACT_APP_AXIOS;
+
+const asyncLocalStorage = {
+  setItem: function (key, value) {
+    return Promise.resolve().then(function () {
+      localStorage.setItem(key, value);
+    });
+  },
+  getItem: function (key) {
+    return Promise.resolve().then(function () {
+      return localStorage.getItem(key);
+    });
+  },
+};
 
 const RegistrPage = () => {
   const [step, setStep] = React.useState(0);
+  const [login] = useSumbitForm(authUser, false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [inputs, setInputs] = React.useState({
     name: "",
     password: "",
@@ -48,8 +68,15 @@ const RegistrPage = () => {
   const handleVerify = async () => {
     try {
       const { data } = await axios.post("/user/step2", { code: inputs.code });
-      localStorage.setItem("token", data.token);
-      window.location = "/";
+      asyncLocalStorage.setItem("token", data.token).then(() => {
+        axios.defaults.headers.common = {
+          Authorization: `bearer ${data.token}`,
+        };
+        login({}, (data) => {
+          dispatch(initApp(data));
+          navigate("/");
+        });
+      });
     } catch ({ response }) {
       PrintErrors(response.data.errors);
     }
@@ -110,7 +137,7 @@ const RegistrPage = () => {
                   label="Born Date"
                   value={inputs.date}
                   onChange={handleInputChange}
-                  min="1900-01-01" 
+                  min="1900-01-01"
                   max="2020-12-31"
                   name="date"
                   placeHolder="Գրեք ձեր ծննդաթիվը"
