@@ -53,7 +53,7 @@ const LoginPage = () => {
         }}
         isForm
       />
-      <h2 className="secondPage">Already have an account?</h2>
+      <h2 className="secondPage">Արդեն գրանցված ե՞ք</h2>
       <div className=" right-container">
         <form
           onSubmit={(e) => {
@@ -71,7 +71,7 @@ const LoginPage = () => {
                 type="mail"
                 placeHolder="Գրեք ձեր Email-ը"
                 value={data.login}
-                label="Email"
+                label="E-mail"
                 name="login"
                 onChange={(e) =>
                   handleInputChange(e.target.name, e.target.value)
@@ -81,7 +81,7 @@ const LoginPage = () => {
                 type="password"
                 value={data.password}
                 name="password"
-                label="Password"
+                label="Ծածկագիրը"
                 placeHolder="Գրեք ձեր ծածկագիրը"
                 onChange={(e) =>
                   handleInputChange(e.target.name, e.target.value)
@@ -89,17 +89,17 @@ const LoginPage = () => {
               />
               <Link to={"/forget-password"}>
                 <MainButton color="transparent-yellow forget" type="button">
-                  Forgot password?
+                  Մոռացել ե՞ք ծածկագիրը
                 </MainButton>
               </Link>
               <MainButton size="m full" color="yellow" type="submit">
                 Մուտք
               </MainButton>
               <div className="form-bottom">
-                <p className="m">Don't have an account?</p>
+                <p className="m">Դեռ գրանցված չե՞ք</p>
                 <Link to="/registration">
                   <MainButton color="transparent-yellow">
-                    Registration
+                    Գրանցում
                   </MainButton>
                 </Link>
               </div>

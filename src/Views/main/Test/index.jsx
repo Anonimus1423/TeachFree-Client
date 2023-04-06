@@ -198,7 +198,7 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
           title={lesson?.title}
           description={
             <>
-              Շնորհավորում ենք, դուք անցաք թեստը <br /> կիսվեք Ձեր
+              Շնորհավորում ենք, դուք ավարտեցիք թեստը <br /> կիսվեք Ձեր
               հաջողությամբ սոցիալական կայքերում
             </>
           }
@@ -209,12 +209,12 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
           buttonLeftText={
             isDefaultTest ? (
               <>
-                Անցիր մեր դասընթացը հատուկ
+                Սկսիր մեր դասընթացը հատուկ
                 {" " + getEnglishLevel(score)} <br /> մակարդակի համար
               </>
             ) : (
               <>
-                Անցիր մեր դասընթացը հատուկ
+                Սկսիր մեր դասընթացը հատուկ
                 {getNextLevel(getEnglishLevel(score))} <br /> մակարդակի համար
               </>
             )
@@ -227,7 +227,7 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
                     value: currentTest?.length,
                   },
                   {
-                    title: "Ջիշտ պատասխաններ",
+                    title: "Ճիշտ պատասխաններ",
                     value: score,
                   },
                   {
@@ -241,7 +241,7 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
                     value: currentTest?.length,
                   },
                   {
-                    title: "Ջիշտ պատասխաններ",
+                    title: "Ճիշտ պատասխաններ",
                     value: score,
                   },
                   {

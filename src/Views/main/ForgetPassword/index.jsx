@@ -31,7 +31,7 @@ export const ForgetPasswordStep1 = () => {
         }}
         isForm
       />
-      <h2 className="secondPage">Forget Your Password?</h2>
+      <h2 className="secondPage">Մոռացել ե՞ք ծածկագիրը</h2>
       <div className="right-container">
         <form
           onSubmit={(e) => {
@@ -48,11 +48,11 @@ export const ForgetPasswordStep1 = () => {
               <MainTextInput
                 type="mail"
                 placeHolder="Գրեք ձեր Email-ը"
-                label="Email"
+                label="E-mail"
                 onChange={(e) => setMail(e.target.value)}
               />
               <MainButton size="m full" color="yellow">
-                Send Mail
+                ՈՒղարկել E-mail
               </MainButton>
             </div>
           </div>
@@ -92,7 +92,7 @@ export const ForgetPasswordStep2 = () => {
         }}
         isForm
       />
-      <h2 className="secondPage">Already have an account?</h2>
+      <h2 className="secondPage">Փոխել ծածկագիրը</h2>
       <div className=" right-container">
         <form
           onSubmit={(e) => {
@@ -108,18 +108,18 @@ export const ForgetPasswordStep2 = () => {
             <div className="form__right__body margin-top">
               <MainTextInput
                 type="password"
-                label="Password"
-                placeHolder="Գրեք ձեր password-ը"
+                label="Ծածկագիր"
+                placeHolder="Գրեք ձեր ծածկագիրը"
                 onChange={(e) => setPassword(e.target.value)}
               />
               <MainTextInput
                 type="password"
-                label="Confirm Password"
-                placeHolder="հաստատեք ձեր password-ը"
+                label="հաստատել ծածկագիրը"
+                placeHolder="հաստատեք ձեր ծածկագիրը-ը"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <MainButton size="m full" color="yellow">
-                Change
+                Փոխել ծածկագիրը
               </MainButton>
             </div>
           </div>

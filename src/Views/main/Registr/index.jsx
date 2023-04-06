@@ -67,7 +67,7 @@ const RegistrPage = () => {
       />
       {step === 0 && (
         <div className="right-container">
-          <h2 className="secondPage">Չունեք ակկաունտ</h2>
+          <h2 className="secondPage">Դեռ գրանցված չե՞ք</h2>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -84,7 +84,7 @@ const RegistrPage = () => {
                   name="name"
                   value={inputs.name}
                   onChange={handleInputChange}
-                  label="Name"
+                  label="Անուն"
                   placeHolder="Գրեք ձեր անունը"
                 />
                 <MainTextInput
@@ -92,7 +92,7 @@ const RegistrPage = () => {
                   type="mail"
                   value={inputs.mail}
                   onChange={handleInputChange}
-                  label="Mail"
+                  label="E-Mail"
                   placeHolder="Գրեք ձեր Email-ը"
                 />
                 <MainTextInput
@@ -100,12 +100,12 @@ const RegistrPage = () => {
                   type="password"
                   value={inputs.password}
                   onChange={handleInputChange}
-                  label="Password"
+                  label="Ծածկագիրը"
                   placeHolder="Գրեք ձեր ծածկագիրը"
                 />
                 <MainTextInput
                   type="date"
-                  label="Born Date"
+                  label="Ծննդյան ամսաթիվ"
                   value={inputs.date}
                   onChange={handleInputChange}
                   min="1900-01-01" 
@@ -117,9 +117,9 @@ const RegistrPage = () => {
                   Անցնել առաջ
                 </MainButton>
                 <div className="form-bottom">
-                  <p className="m">Don't have an account?</p>
+                  <p className="m">Արդեն գրանցված ե՞ք</p>
                   <Link to="/log-in">
-                    <MainButton color="transparent-yellow">Log In</MainButton>
+                    <MainButton color="transparent-yellow">Մուտք</MainButton>
                   </Link>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const RegistrPage = () => {
       )}
       {step === 1 && (
         <div className="right-container">
-          <h2 className="secondPage">Already have an account?</h2>
+          <h2 className="secondPage">Դեռ գրանցված չե՞ք</h2>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -146,11 +146,11 @@ const RegistrPage = () => {
                   name="code"
                   value={inputs.code}
                   onChange={handleInputChange}
-                  placeHolder="Write your validation code"
-                  label="Validation Code"
+                  placeHolder="Գրեք ձեր վավերացման կոդը"
+                  label="Վավերացման կոդ"
                 />
                 <MainButton size="m full" color="yellow">
-                  Verify
+                  Հաստատել
                 </MainButton>
               </div>
             </div>
