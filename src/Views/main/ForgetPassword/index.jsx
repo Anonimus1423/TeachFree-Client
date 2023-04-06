@@ -1,14 +1,13 @@
-import { Button, Input } from "@mui/material";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import PrintErrors from "../../../utils/PrintError";
 import { toast } from "react-toastify";
 import Header from "../../components/header/Header";
-import { ToastContainer } from "react-toastify";
 import LoginIcon from "../../images/form images/Login.svg";
 import MainTextInput from "../../components/inputs";
 import MainButton from "../../components/buttons/MainButton";
+import Footer from "../../components/footer/Footer";
 axios.defaults.baseURL = process.env.REACT_APP_AXIOS;
 
 export const ForgetPasswordStep1 = () => {
@@ -32,8 +31,7 @@ export const ForgetPasswordStep1 = () => {
         }}
         isForm
       />
-      <ToastContainer />
-      <h2 className="secondPage">Already have an account?</h2>
+      <h2 className="secondPage">Forget Your Password?</h2>
       <div className="right-container">
         <form
           onSubmit={(e) => {
@@ -60,6 +58,7 @@ export const ForgetPasswordStep1 = () => {
           </div>
         </form>
       </div>
+      <Footer fixed />
     </div>
   );
 };
@@ -93,7 +92,6 @@ export const ForgetPasswordStep2 = () => {
         }}
         isForm
       />
-      <ToastContainer />
       <h2 className="secondPage">Already have an account?</h2>
       <div className=" right-container">
         <form
@@ -127,6 +125,7 @@ export const ForgetPasswordStep2 = () => {
           </div>
         </form>
       </div>
+      <Footer fixed />
     </div>
   );
 };

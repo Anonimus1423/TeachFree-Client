@@ -6,7 +6,7 @@ import Header from "../../components/header/Header";
 import LoginIcon from "../../images/form images/Login.svg";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const [data, setData] = React.useState({
@@ -53,7 +53,6 @@ const LoginPage = () => {
         }}
         isForm
       />
-      <ToastContainer />
       <h2 className="secondPage">Already have an account?</h2>
       <div className=" right-container">
         <form
@@ -69,7 +68,7 @@ const LoginPage = () => {
           <div className="form__right">
             <div className="form__right__body margin-top">
               <MainTextInput
-                type="text"
+                type="mail"
                 placeHolder="Գրեք ձեր Email-ը"
                 value={data.login}
                 label="Email"
@@ -94,7 +93,7 @@ const LoginPage = () => {
                 </MainButton>
               </Link>
               <MainButton size="m full" color="yellow" type="submit">
-                Գրանցում
+                Մուտք
               </MainButton>
               <div className="form-bottom">
                 <p className="m">Don't have an account?</p>

@@ -151,6 +151,8 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
                       onClick={() => {
                         if (!isAnswered) checkAnswer(testAnswer);
                       }}
+                      className={isAnswered ? "disabled" : ""}
+                      disabled={isAnswered}
                     >
                       Պատասխանել
                     </MainButton>
@@ -159,6 +161,8 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
                     color="transparent-yellow"
                     arrowLeft
                     onClick={() => previousStep()}
+                    disabled={step === 0}
+                    className={step === 0 ? "disabled" : ""}
                   >
                     Նախորդը
                   </MainButton>
@@ -167,6 +171,8 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
                     onClick={() => {
                       if (!isAnswered) checkAnswer(testAnswer);
                     }}
+                    className={isAnswered ? "disabled" : ""}
+                    disabled={isAnswered}
                   >
                     Պատասխանել
                   </MainButton>

@@ -8,7 +8,6 @@ import "./style/index.scss";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 axios.defaults.baseURL = process.env.REACT_APP_AXIOS;
 
 const RegistrPage = () => {
@@ -66,7 +65,6 @@ const RegistrPage = () => {
         }}
         isForm
       />
-      <ToastContainer />
       {step === 0 && (
         <div className="right-container">
           <h2 className="secondPage">Already have an account?</h2>
