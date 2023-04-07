@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5ea442f.css",
-    "main.js": "/static/js/main.dd994253.js",
+    "main.css": "/static/css/main.3beafd67.css",
+    "main.js": "/static/js/main.f6ecf62d.js",
     "static/media/SegoeUI.eot": "/static/media/SegoeUI.afeddaf4517ff44f38fa.eot",
     "static/media/SegoeUI.ttf": "/static/media/SegoeUI.b127acafb23e1c48733e.ttf",
     "static/media/Test Image.png": "/static/media/Test Image.6a6ff024c0fcd2f7aa61.png",
@@ -54,11 +54,11 @@
     "static/media/Time.svg": "/static/media/Time.809d72f90e81a988e378c1cffb9a32a2.svg",
     "static/media/Close.svg": "/static/media/Close.24629bc6d1c21e4faadc07ec8f9b9ec0.svg",
     "static/media/Course Checked.svg": "/static/media/Course Checked.abf236265d378f67b831fb81820ea75b.svg",
-    "main.a5ea442f.css.map": "/static/css/main.a5ea442f.css.map",
-    "main.dd994253.js.map": "/static/js/main.dd994253.js.map"
+    "main.3beafd67.css.map": "/static/css/main.3beafd67.css.map",
+    "main.f6ecf62d.js.map": "/static/js/main.f6ecf62d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5ea442f.css",
-    "static/js/main.dd994253.js"
+    "static/css/main.3beafd67.css",
+    "static/js/main.f6ecf62d.js"
   ]
 }

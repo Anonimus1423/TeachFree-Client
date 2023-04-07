@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import PrintErrors from "../../../utils/PrintError";
@@ -12,10 +12,14 @@ axios.defaults.baseURL = process.env.REACT_APP_AXIOS;
 
 export const ForgetPasswordStep1 = () => {
   const [mail, setMail] = React.useState("");
+  const [checked, setChecked] = useState(false)
   const onSumbit = async () => {
     try {
       await axios.post("/user/forget-password", { mail });
+      setTimeout(() => setChecked(false), 60000); 
+      setChecked(true);
       toast.success("Please check Email");
+      toast.info("Didn't get Email? try again in a minute");
     } catch ({ response }) {
       PrintErrors(response.data.errors);
     }
@@ -51,7 +55,7 @@ export const ForgetPasswordStep1 = () => {
                 label="E-mail"
                 onChange={(e) => setMail(e.target.value)}
               />
-              <MainButton size="m full" color="yellow">
+              <MainButton size="m full" color="yellow" disabled={checked} className={checked ? "disabled" : ""}>
                 ՈՒղարկել E-mail
               </MainButton>
             </div>
