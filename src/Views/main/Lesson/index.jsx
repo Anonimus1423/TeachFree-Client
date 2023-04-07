@@ -31,7 +31,6 @@ function Lesson() {
   const [lesson, setLesson] = useState({});
   const [nextLessonId, setNextLessonId] = useState();
   const [prevLessonId, setPrevLessonId] = useState();
-  const [link, setLink] = useState();
   const [getLesson, loading] = useSumbitForm(
     () => getLessonWithTest(courseId, lessonId),
     true
@@ -40,6 +39,7 @@ function Lesson() {
     () => passLesson(courseId, lessonId),
     true
   );
+  let link;
 
   const goNext = (isLastTest) => {
     if (lesson?.test?.length === 0) {
@@ -75,15 +75,20 @@ function Lesson() {
     });
     getLesson({}, (data) => {
       setLesson(data);
-      if (data?.test?.length === 0 || data.lesson.passed) {
+      if (data.lesson.passed) {
         setIsTestPassed(true);
+      }
+      else if(data?.test?.length === 0)
+      {
+        setIsTestPassed(true);
+        passLessonFunction({}, () => {});
       }
     });
   }, [state]);
 
   const isLastTest = nextLessonId === null;
   if (nextLessonId === null && link !== "/courses/" + courseId)
-    setLink("/courses/" + courseId);
+    link = "/courses/" + courseId;
   if (!isTest) {
     return (
       <div className="lesson right-main-container">
@@ -125,7 +130,12 @@ function Lesson() {
             ></div>
             <div className="test-buttons">
               <div className="hide">
-                <MainButton color="yellow">
+                <MainButton 
+                  disabled={isTestPassed}
+                  color="yellow"
+                  onClick={() => setIsTest(true)}
+                  className={isTestPassed ? "disabled" : null}
+                >
                   ԱՆՑՆԵԼ ԼԵԶՎԻ ՄԱՐԴԱԿԻ ԹԵՍՏ
                 </MainButton>
               </div>
@@ -172,7 +182,7 @@ function Lesson() {
                     disabled={!isTestPassed}
                     className={!isTestPassed ? "disabled" : ""}
                   >
-                    {!isLastTest ? "Հետագա" : "Ավարտել"}
+                    {!isLastTest ? "Հաջորդը" : "Ավարտել"}
                   </MainButton>
                 </Link>
               ) : (
@@ -182,7 +192,7 @@ function Lesson() {
                   disabled={!isTestPassed}
                   className={!isTestPassed ? "disabled" : ""}
                 >
-                  {!isLastTest ? "Հետագա" : "Ավարտել"}
+                  {!isLastTest ? "Հաջորդը" : "Ավարտել"}
                 </MainButton>
               )}
             </div>
