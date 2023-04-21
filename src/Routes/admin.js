@@ -21,10 +21,10 @@ export const adminRoutes = createBrowserRouter([
     path: "/admin/users",
     element: <AdminUsersPage />,
   },
-  // {
-  //   path: "/admin/edit/:id",
-  //   element: <EditClass />,
-  // },
+  {
+    path: "/admin/edit/:id",
+    element: <EditClass />,
+  },
   {
     path: "/",
     element: <Main />,
