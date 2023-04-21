@@ -37,14 +37,21 @@ const LessonEdit = ({ data, onChange, onDelete, onDuplicate, index }) => {
       <div className="flex flex-col gap-2">
         <div className="text-xl">Lesson Video</div>
         {data.videoUrl && (
-          <video
+          <iframe
             src={data.videoUrl}
             controls
             width="400px"
             style={{ margin: "0px auto" }}
-          ></video>
+          ></iframe>
         )}
-        <Upload handleUpload={(url) => onChange("videoUrl", url)} />
+        {/* <Upload handleUpload={(url) => onChange("videoUrl", url)} /> */}
+        <TextField
+          value={data.videoUrl}
+          className="width-1/1"
+          onChange={handleInputChange}
+          name="videoUrl"
+          label="Lesson Video Src"
+        />
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-xl">
