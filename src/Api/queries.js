@@ -45,6 +45,7 @@ export const getAllUsers = (search) => {
 };
 
 export const getClassInfo = (id) => {
+  console.log(token);
   return axios.get(`/admin/class/${id}`);
 };
 

@@ -34,7 +34,6 @@ function App() {
       return;
     }
   }, []);
-  console.log(role);
   const [sidebarOpened, setSidebarOpened] = useState(false);
   useEffect(() => {
     sidebarOpened
@@ -71,7 +70,11 @@ function App() {
                       }
                       onClick={() => setSidebarOpened((state) => !state)}
                     ></div>
-                    <Sidebar noUser={true} sidebarOpened={sidebarOpened} setSidebarOpened={setSidebarOpened} />
+                    <Sidebar
+                      noUser={true}
+                      sidebarOpened={sidebarOpened}
+                      setSidebarOpened={setSidebarOpened}
+                    />
                     <MainRoutes loading />
                   </BrowserRouter>
                 </>
@@ -99,7 +102,10 @@ function App() {
                       }
                       onClick={() => setSidebarOpened((state) => !state)}
                     ></div>
-                    <Sidebar sidebarOpened={sidebarOpened} setSidebarOpened={setSidebarOpened} />
+                    <Sidebar
+                      sidebarOpened={sidebarOpened}
+                      setSidebarOpened={setSidebarOpened}
+                    />
                     <UserRoutes />
                   </BrowserRouter>
                 </>

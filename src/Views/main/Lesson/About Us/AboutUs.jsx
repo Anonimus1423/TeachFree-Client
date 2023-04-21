@@ -8,13 +8,18 @@ import Footer from "../../../components/footer/Footer.jsx";
 import axios from "axios";
 
 function Lesson() {
-  let courseId = "6419340ba14d67ffaa455692",
-    lessonId = "6419340ba14d67ffaa455694";
+  let courseId = "644239a5591008b1b2eff237",
+    lessonId = "644239a5591008b1b2eff239";
 
   const [lesson, setLesson] = useState({});
   useEffect(() => {
+    const token = localStorage.getItem("token");
     axios
-      .get(`/api/user/course/${courseId}/lesson/${lessonId}`)
+      .get(
+        `/api/user/course${
+          token ? "" : "/dont-reg"
+        }/${courseId}/lesson/${lessonId}`
+      )
       .then((data) => setLesson(data.data));
   }, []);
 
