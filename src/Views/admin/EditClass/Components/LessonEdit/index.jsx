@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Upload } from "../../../../../Upload";
 import { copyToClipboard } from "../../../../../utils/copy";
+import { Textarea } from "@mui/joy";
 
 const LessonEdit = ({ data, onChange, onDelete, onDuplicate, index }) => {
   const handleInputChange = (e) => {
@@ -36,21 +37,13 @@ const LessonEdit = ({ data, onChange, onDelete, onDuplicate, index }) => {
       />
       <div className="flex flex-col gap-2">
         <div className="text-xl">Lesson Video</div>
-        {data.videoUrl && (
-          <iframe
-            src={data.videoUrl}
-            controls
-            width="400px"
-            style={{ margin: "0px auto" }}
-          ></iframe>
-        )}
+        <div dangerouslySetInnerHTML={{ __html: data.videoUrl }}></div>
         {/* <Upload handleUpload={(url) => onChange("videoUrl", url)} /> */}
-        <TextField
+        <Textarea
           value={data.videoUrl}
-          className="width-1/1"
-          onChange={handleInputChange}
           name="videoUrl"
-          label="Lesson Video Src"
+          onChange={handleInputChange}
+          placeholder="Enter video embed"
         />
       </div>
       <div className="flex flex-col gap-2">

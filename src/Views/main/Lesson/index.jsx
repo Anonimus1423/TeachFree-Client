@@ -77,9 +77,7 @@ function Lesson() {
       setLesson(data);
       if (data.lesson.passed) {
         setIsTestPassed(true);
-      }
-      else if(data?.test?.length === 0)
-      {
+      } else if (data?.test?.length === 0) {
         setIsTestPassed(true);
         passLessonFunction({}, () => {});
       }
@@ -123,14 +121,16 @@ function Lesson() {
               time={lesson?.lesson?.time}
               proggress={100}
             />
-            <Video src={lesson?.lesson?.videoUrl?.toString()} />
+            <div
+              dangerouslySetInnerHTML={{ __html: lesson?.lesson?.videoUrl }}
+            ></div>
             <div
               className="lesson-content"
               dangerouslySetInnerHTML={{ __html: lesson?.lesson?.description }}
             ></div>
             <div className="test-buttons">
               <div className="hide">
-                <MainButton 
+                <MainButton
                   disabled={isTestPassed}
                   color="yellow"
                   onClick={() => setIsTest(true)}
