@@ -25,6 +25,7 @@ export const EditClass = () => {
     level: "A1",
     tags: "",
   });
+
   const params = useParams();
   useEffect(() => {
     init(params.id, (info) => {
@@ -59,6 +60,16 @@ export const EditClass = () => {
         },
       },
       () => {
+        init(params.id, (info) => {
+          setData({
+            ...info,
+            image: info.picture_src,
+            tags: info.tags.join(" "),
+          });
+          setEditableLesson({
+            lesson: info.lessons[0],
+          });
+        });
         toast.success("Course updated successfully.");
       }
     );
