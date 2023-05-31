@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ReactComponent as PlayButtonIcon } from "../../../images/icons/Video Play.svg";
 import ReactPlayer from "react-player";
-import VB from "../../../main/Lesson/Lesson Components/VideoButton";
 
 function VideoButton() {
   const [play, setPlay] = useState(false);
@@ -16,7 +15,7 @@ function VideoButton() {
         ></div>
         <div
           className={
-            !isPlaying ? "video active fixed-video" : "video fixed-video"
+            !isPlaying ? "video active cover-page-video fixed-video" : "cover-page-video video fixed-video"
           }
         >
           <div className="background"></div>
@@ -30,7 +29,6 @@ function VideoButton() {
             }
             controls={true}
           />
-          <VB className={!isPlaying ? "active" : ""} />
         </div>
       </>
     );
@@ -38,7 +36,7 @@ function VideoButton() {
   return (
     <button className="play-button" onClick={() => setPlay((state) => !state)}>
       <PlayButtonIcon />
-      <h4 className="subtitle">Ինչպես օգտվել մեր կայքից</h4>
+      <h4 className="subtitle">Teach Free նախագծի մասին</h4>
     </button>
   );
 }

@@ -5,6 +5,7 @@ import * as appSelectors from "../../../redux/app/selectors";
 import { useSelector } from "react-redux";
 import useSumbitForm from "../../../utils/submitForm";
 import getOpenedLevel from "../../../utils/getOpenedLevel";
+import sortCourses from "../../../utils/sortCourses";
 
 function AllCoursesAuthorizedComponent({ courses }) {
   const app = useSelector(appSelectors.appSelector);
@@ -16,7 +17,7 @@ function AllCoursesAuthorizedComponent({ courses }) {
     .sort((a, b) => {
       return a?.progress > b?.progress ? 1 : -1;
     })
-    .sort((a, b) => (openedLevel.includes(b.course.level) ? 1 : -1))
+    .sort((a, b) => (openedLevel.includes(b.course.level) ? sortCourses : -1))
     .map((course, i) => {
       const isClosed = !openedLevel.includes(course.course.level);
       return (

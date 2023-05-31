@@ -3,7 +3,7 @@ import "./style/index.scss";
 import Header from "../../components/header/Header";
 import InIcon from "../../images/icons/In.svg";
 import FacebookIcon from "../../images/icons/Facebook.svg";
-import TwitterIcon from "../../images/icons/Twitter.svg";
+import TwitterIcon from "../../images/icons/Instagram.svg";
 import Footer from "../../components/footer/Footer.jsx";
 import useSumbitForm from "../../../utils/submitForm";
 import { passLesson, changeUserLevel } from "../../../Api/queries";
@@ -69,7 +69,7 @@ function Result({
   const goBack = () => {
     if (role === 1) {
       if (!isDefaultTest) {
-        if (testLength / score <= 2) {
+        if (testLength === score) {
           passLessonFunction({}, () => {});
           setIsTestPassed(true);
         }
@@ -95,22 +95,15 @@ function Result({
         <p>{description}</p>
         <div className="social-icons">
           <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.origin}`}
+            href={`https://www.facebook.com/GOlanguage2022`}
           >
             <div className="social-icon">
               <img src={FacebookIcon} alt="facebook" />
             </div>
           </a>
-          <a href="https://twitter.com/intent/tweet?text=I%20get%20%20points%20and%20you%20can%20too,%20it's%20very%20fun%20to%20learn%20english%20with%20this%20site%20">
+          <a href="https://instagram.com/golanguageschool?igshid=MzRlODBiNWFlZA==">
             <div className="social-icon">
-              <img src={TwitterIcon} alt="twitter" />
-            </div>
-          </a>
-          <a
-            href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.origin}`}
-          >
-            <div className="social-icon">
-              <img src={InIcon} alt="linkedin" />
+              <img src={TwitterIcon} alt="Instagram" /> {/* Instagram icon */}
             </div>
           </a>
         </div>
@@ -156,7 +149,6 @@ function Result({
           </div>
         </div>
       </div>
-      <Footer fixed />
     </div>
   );
 }

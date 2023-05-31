@@ -3,15 +3,17 @@ import Header from "../../../components/header/Header.jsx";
 import PageTitle from "../../../components/titles/PageTitle";
 import ".././style/index.scss";
 import { useEffect, useState } from "react";
-import Video from ".././Lesson Components/Video.jsx";
 import Footer from "../../../components/footer/Footer.jsx";
 import axios from "axios";
+import VideoButton from "../Lesson Components/VideoButton";
+
 
 function Lesson() {
   let courseId = "644239a5591008b1b2eff237",
     lessonId = "644239a5591008b1b2eff239";
 
   const [lesson, setLesson] = useState({});
+  const [isPlaying, setIsPlaying] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
@@ -39,9 +41,13 @@ function Lesson() {
           time={lesson?.lesson?.time}
           proggress={100}
         />
-        <div
+        <div  className={!isPlaying ? "video-container active" : "video-container"}>
+          <div className="background"></div>
+          <VideoButton className={!isPlaying ? "active" : ""} />
+          <div
           dangerouslySetInnerHTML={{ __html: lesson?.lesson?.videoUrl }}
         ></div>
+        </div>
         <div
           className="lesson-content"
           dangerouslySetInnerHTML={{ __html: lesson?.lesson?.description }}

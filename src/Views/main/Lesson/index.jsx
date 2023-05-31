@@ -10,7 +10,7 @@ import {
 import useSumbitForm from "../../../utils/submitForm";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Video from "./Lesson Components/Video.jsx";
+import VideoButton from "./Lesson Components/VideoButton";
 import Footer from "../../components/footer/Footer.jsx";
 import * as appSelectors from "../../../redux/app/selectors";
 import getNextLevel from "../../../utils/getNextLevel";
@@ -30,6 +30,7 @@ function Lesson() {
   const [getCourse, l] = useSumbitForm(() => getClassInfo(courseId), true);
   const [lesson, setLesson] = useState({});
   const [nextLessonId, setNextLessonId] = useState();
+  const [isPlaying, setIsPlaying] = useState(false);
   const [prevLessonId, setPrevLessonId] = useState();
   const [getLesson, loading] = useSumbitForm(
     () => getLessonWithTest(courseId, lessonId),
@@ -121,9 +122,13 @@ function Lesson() {
               time={lesson?.lesson?.time}
               proggress={100}
             />
-            <div
+            <div  className={!isPlaying ? "video-container active" : "video-container"}>
+              <div className="background"></div>
+              <VideoButton className={!isPlaying ? "active" : ""} />
+              <div
               dangerouslySetInnerHTML={{ __html: lesson?.lesson?.videoUrl }}
             ></div>
+            </div>
             <div
               className="lesson-content"
               dangerouslySetInnerHTML={{ __html: lesson?.lesson?.description }}
@@ -136,7 +141,7 @@ function Lesson() {
                   onClick={() => setIsTest(true)}
                   className={isTestPassed ? "disabled" : null}
                 >
-                  ԱՆՑՆԵԼ ԼԵԶՎԻ ՄԱՐԴԱԿԻ ԹԵՍՏ
+                  Վարժություններ տեսադասի մասին
                 </MainButton>
               </div>
               {prevLessonId ? (
@@ -169,7 +174,7 @@ function Lesson() {
                 onClick={() => setIsTest(true)}
                 className={isTestPassed ? "disabled" : null}
               >
-                ԱՆՑՆԵԼ ԼԵԶՎԻ ՄԱՐԴԱԿԻ ԹԵՍՏ
+                Վարժություններ տեսադասի մասին
               </MainButton>
               {isTestPassed ? (
                 <Link

@@ -33,7 +33,7 @@ function Header({ buttons, isForm }) {
           <Link to="/">
             <img src={OwlImageUrl} alt="Owl Go Language School Logo" />
           </Link>
-          <h2 className="h4 subtitle">Սովորիր արագ և արդյունավետ</h2>
+          <h2 className="h4 subtitle">Սովորիր անգլերեն մեր ինքնուրույն կուրսի միջոցով</h2>
         </div>
         <div className="right authorized-right">
           <Link to="/test" className="authorized">
@@ -75,7 +75,7 @@ function Header({ buttons, isForm }) {
           <Link to="/">
             <img src={OwlImageUrl} alt="Owl Go Language School Logo" />
           </Link>
-          <h2 className="h4 subtitle">Սովորիր արագ և արդյունավետ</h2>
+          <h2 className="h4 subtitle">Սովորիր անգլերեն մեր ինքնուրույն կուրսի միջոցով</h2>
         </div>
         <div
           className={isForm ? "right unautorized formm" : "right unautorized"}
