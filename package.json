@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://92.63.179.95:3001",
   "dependencies": {
     "@cloudinary/url-gen": "^1.8.7",
     "@emotion/react": "^11.10.5",
