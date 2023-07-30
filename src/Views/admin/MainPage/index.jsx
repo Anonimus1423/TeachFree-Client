@@ -63,7 +63,7 @@ const AdminMainPage = () => {
       </div>
       {!loading && (
         <>
-          {courses.map((e) => {
+          {courses?.map((e) => {
             return (
               <div
                 onClick={() => navigate(`/admin/edit/${e._id}`)}

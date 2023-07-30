@@ -6,8 +6,7 @@ import sortCourses from "../../../utils/sortCourses"
 
 function AllCoursesComponent() {
   const courses = useSelector(selectAllCourses);
-  return courses
-    .filter((course) => {
+  return courses?.filter((course) => {
       return !course?.tags?.includes("hidden");
     })
     .sort((a, b) => sortCourses(a, b))

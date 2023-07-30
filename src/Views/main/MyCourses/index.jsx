@@ -38,7 +38,7 @@ function MyCourses() {
         <Loading />
       ) : (
         <div className="right-container after-relative">
-          {courses.length ? (
+          {courses?.length ? (
             <>
               <MainTitle>
                 Անհատական դասընթաց անգլերենի ձեր մակարդակին համապատասխան
@@ -67,7 +67,7 @@ function MyCourses() {
           )}
         </div>
       )}
-      <Footer fixed={courses.length === 0 || courses.length === 1} />
+      <Footer fixed={courses?.length === 0 || courses?.length === 1} />
       <TopButton />
     </div>
   );
