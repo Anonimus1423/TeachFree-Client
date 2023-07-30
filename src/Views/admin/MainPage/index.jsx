@@ -21,7 +21,7 @@ const AdminMainPage = () => {
   const handleDeleteCourse = (id) => {
     deleteCourse(id, () => {
       toast.success("Course has been deleted.");
-      setCourses(courses.filter((e) => e._id !== id));
+      setCourses(courses?.filter((e) => e._id !== id));
     });
   };
   return (
