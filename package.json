@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "localhost:80",
+  "proxy": "https://localhost:80",
   "dependencies": {
     "@cloudinary/url-gen": "^1.8.7",
     "@emotion/react": "^11.10.5",
