@@ -185,7 +185,7 @@ const RegistrPage = () => {
           </form>
         </div>
       )}
-      <Footer fixed />
+      <Footer />
     </div>
   );
 };

@@ -23,7 +23,7 @@ function Lesson() {
           token ? "" : "/dont-reg"
         }/${courseId}/lesson/${lessonId}`
       )
-      .then((data) => setLesson({lesson: data.data[0]}));
+      .then((data) => setLesson({lesson: data.data[0] || data.data.lesson}));
   }, []);
 
   return (
