@@ -198,27 +198,14 @@ function Test({ test, lesson, setIsTest, setIsTestPassed, courseId }) {
           title={lesson?.title}
           description={
             <>
-              Շնորհավորում ենք, դուք ավարտեցիք թեստը <br /> կիսվեք Ձեր
-              հաջողությամբ սոցիալական կայքերում
+              Շնորհակալ ենք թեստի բոլոր հարցերին պատասխանելու համար,  <br /> կիսվեք Ձեր արդյունքներով սոցիալական հարթակներում:
             </>
           }
           leftButtonText="Վերանայել"
           buttonText={
             isDefaultTest ? "Բարելավիր քո անգլերենը!" : "Վերադառնալ դասընթացին"
           }
-          buttonLeftText={
-            isDefaultTest ? (
-              <>
-                Սկսիր մեր դասընթացը հատուկ
-                {" " + getEnglishLevel(score)} <br /> մակարդակի համար
-              </>
-            ) : (
-              <>
-                Սկսիր մեր դասընթացը հատուկ
-                {getNextLevel(getEnglishLevel(score))} <br /> մակարդակի համար
-              </>
-            )
-          }
+          buttonLeftText=""
           tableInfo={
             !isDefaultTest
               ? [

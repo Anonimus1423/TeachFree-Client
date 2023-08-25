@@ -1,6 +1,6 @@
 export default function getEnglishLevel(score){
     let yourLevel = null;
-    const points = [0, 5, 10, 15, 20, 25]
+    const points = [0, 11, 25, 50, 50, 50]
     if(score >= points[0])
         yourLevel = "A1"
     if(score >= points[1])

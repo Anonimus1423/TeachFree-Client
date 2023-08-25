@@ -10,10 +10,11 @@ import VideoButton from "../Lesson Components/VideoButton";
 
 function Lesson() {
   let courseId = "644239a5591008b1b2eff237",
-    lessonId = "644239a5591008b1b2eff239";
+    lessonId = "64d72a3c1731de3469ffc947";
 
   const [lesson, setLesson] = useState({});
   const [isPlaying, setIsPlaying] = useState(false);
+  console.log(lesson);
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
@@ -22,7 +23,7 @@ function Lesson() {
           token ? "" : "/dont-reg"
         }/${courseId}/lesson/${lessonId}`
       )
-      .then((data) => setLesson(data.data));
+      .then((data) => setLesson({lesson: data.data[0]}));
   }, []);
 
   return (

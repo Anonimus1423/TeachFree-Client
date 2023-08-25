@@ -43,7 +43,10 @@ function MyCourses() {
               <MainTitle>
                 Անհատական դասընթաց անգլերենի ձեր մակարդակին համապատասխան
               </MainTitle>
-              {courses
+              {
+                courses.filter((course) => {
+                  return !course?.course?.tags?.includes("hidden");
+                })
                 .sort((a, b) => {
                   return a?.progress > b?.progress ? 1 : -1;
                 })

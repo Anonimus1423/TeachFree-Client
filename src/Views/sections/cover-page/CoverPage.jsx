@@ -18,7 +18,7 @@ function CoverPage() {
           միջոցառումներ՝ մեծահասակների համար, որոնք կրթում և զարգացնում են մեր
           ուսանողներին, նաև ապահովում են հետաքրքիր ժամանց նրանց համար:
         </p>
-        <Link to={"/courses/6419340ba14d67ffaa455692/6419340ba14d67ffaa455694"}>
+        <Link to={"/courses/noreg/644239a5591008b1b2eff237/64d72a3c1731de3469ffc947"}>
           <MainButton color="yellow">
             Փաստեր Go languages school-ի մասին
           </MainButton>

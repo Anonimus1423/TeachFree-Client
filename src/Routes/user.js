@@ -15,7 +15,7 @@ const UserRoutes = () => {
       <Route path="/my-courses" element={<MyCourses />} />
       <Route path="/courses" element={<AllCoursesAuthorized />} />
       <Route path="/courses/:courseId" element={<Course />} />
-      <Route path="/courses/6419340ba14d67ffaa455692/6419340ba14d67ffaa455694" element={<AboutUs />} />;
+      <Route path="/courses/noreg/644239a5591008b1b2eff237/64d72a3c1731de3469ffc947" element={<AboutUs />} />;
       <Route path="/courses/:courseId/:lessonId" element={<Lesson />} />
       {defaultRoutes.map((e, key) => {
         return <Route path={e.path} key={key} element={e.element} />;

@@ -95,7 +95,7 @@ function Result({
         <p>{description}</p>
         <div className="social-icons">
           <a
-            href={`https://www.facebook.com/GOlanguage2022`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://teachfree.am`}
           >
             <div className="social-icon">
               <img src={FacebookIcon} alt="facebook" />
